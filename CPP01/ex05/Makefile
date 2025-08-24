@@ -1,8 +1,8 @@
-NAME	=	replace
+NAME	=	level
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp replace.cpp
+SRCS	=	main.cpp Harl.cpp
 
 CYAN	=	\033[1;96m
 GREEN	=	\033[1;92m
