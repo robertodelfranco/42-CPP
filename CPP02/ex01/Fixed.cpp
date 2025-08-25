@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 18:33:33 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/25 19:26:01 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/25 19:31:51 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,10 @@ Fixed::~Fixed() {
 }
 
 int	Fixed::getRawBits() const {
-	std::cout << YELLOW << "getRawBits member function called" << NC << std::endl;
 	return fixedValue;
 }
 
 void	Fixed::setRawBits(int const raw) {
-	std::cout << YELLOW << "setRawBits member function called" << NC << std::endl;
 	fixedValue = raw;
 }
 
