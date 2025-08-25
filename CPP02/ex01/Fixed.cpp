@@ -6,16 +6,26 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 18:33:33 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/25 19:10:55 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/25 19:26:01 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int	Fixed::bitValue = 8;
+const int	Fixed::fractionalBitValue = 8;
 
 Fixed::Fixed() : fixedValue(0) {
 	std::cout << GREEN << "Default constructor called" << NC << std::endl;
+}
+
+Fixed::Fixed(const int value) {
+	std::cout << GREEN << "Int constructor called" << NC << std::endl;
+	fixedValue = value << fractionalBitValue;
+}
+
+Fixed::Fixed(const float value) {
+	std::cout << GREEN << "Float constructor called" << NC << std::endl;
+	fixedValue = roundf(value * (1 << fractionalBitValue));
 }
 
 Fixed::Fixed(const Fixed& other) {
@@ -46,4 +56,17 @@ int	Fixed::getRawBits() const {
 void	Fixed::setRawBits(int const raw) {
 	std::cout << YELLOW << "setRawBits member function called" << NC << std::endl;
 	fixedValue = raw;
+}
+
+float	Fixed::toFloat(void) const {
+	return ((float)fixedValue / (1 << fractionalBitValue));
+}
+
+int		Fixed::toInt(void) const {
+	return (fixedValue >> fractionalBitValue);
+}
+
+std::ostream&	operator<<(std::ostream& less, const Fixed& object) {
+	less << object.toFloat();
+	return less;
 }
