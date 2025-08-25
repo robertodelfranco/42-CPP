@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 20:06:25 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/24 20:06:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/25 15:57:38 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,8 @@ void	Harl::complain(std::string level) {
 	switch (getLevel(level)) {
 		case 0:
 			_debug();
-			// fall through
 		case 1:
 			_info();
-			// fall through
 		case 2:
 			_warning();
 			// fall through

@@ -30,7 +30,12 @@ $(OBJ_DIR)/%.o:%.cpp
 
 clean:
 	@rm -rf ${OBJS}
-	@echo "${RED}Object files cleaned!${NC}"
+	@if [ -d "$(OBJ_DIR)" ]; then \
+		if [ ! "$(ls -A $(OBJ_DIR))" ]; then \
+			rmdir $(OBJ_DIR); \
+		fi \
+	fi
+	@echo "${RED}Object files and empty object directory cleaned!${NC}"
 
 fclean:	clean
 	@rm -rf ${NAME}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 19:18:23 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/24 19:18:23 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/25 15:41:37 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	stringReplace(std::string filename, std::string s1, std::string s2) {
 				pos = find + s1.length();
 			}
 		}
+		outfile << std::endl;
 	}
 	infile.close();
 	outfile.close();
