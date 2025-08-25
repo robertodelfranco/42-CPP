@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"fstream": "cpp",
-		"string": "cpp",
-		"unordered_map": "cpp",
-		"string_view": "cpp",
-		"ranges": "cpp"
-	}
-}
