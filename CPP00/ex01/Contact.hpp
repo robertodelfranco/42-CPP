@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:10:33 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/22 13:51:26 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/25 12:30:12 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Contact {
 		void setInfo();
 		void displayInfo(int index) const;
 		void displayExtraInfo(int index) const;
+
 	private:
 		std::string firstName;
 		std::string lastName;
