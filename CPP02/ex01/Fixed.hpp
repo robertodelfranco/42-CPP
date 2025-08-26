@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 18:12:15 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/25 19:24:08 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/26 14:38:09 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ class Fixed {
 		int		toInt(void) const;
 };
 
-std::ostream&	operator<<(std::ostream& less, const Fixed& other);
+std::ostream&	operator<<(std::ostream& less, const Fixed& object);
 
 #endif /* FIXED_HPP */
