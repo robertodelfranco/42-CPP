@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 18:09:24 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 18:22:03 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:58:10 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ int main() {
 
 	DiamondTrap d("dynamo");
 
+	ClapTrap* ptr = new DiamondTrap(d);
+	FragTrap* fragPtr = new FragTrap(d);
+	ScavTrap* scavPtr = new ScavTrap(d);
+
+	ptr->attack("John");
+	fragPtr->attack("John");
+	scavPtr->attack("John");
 	d.attack("John");
 	a.takeDamage(d.getAttackDamage());
 	d.beRepaired(5);
@@ -46,4 +53,9 @@ int main() {
 	d.guardGate();
 
 	std::cout << std::endl;
+	delete ptr;
+	delete fragPtr;
+	delete scavPtr;
+
+	return 0;
 }
