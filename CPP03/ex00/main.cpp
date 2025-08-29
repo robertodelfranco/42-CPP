@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 18:09:24 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/27 18:41:01 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 13:00:11 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ int main() {
 	a.attack("Jane doe");
 	b.takeDamage(a.getAttackDamage());
 	b.beRepaired(5);
+
 	std::cout << std::endl;
+
+	return 0;
 }
