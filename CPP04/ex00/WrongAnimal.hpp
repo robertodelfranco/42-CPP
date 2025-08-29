@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 22:21:04 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/28 22:21:04 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/29 12:38:59 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #define ORANGE "\033[38;5;214m"
 #define RED "\033[91m"
-#define NC "\033[1m"
+#define NC "\033[0m"
 
 class WrongAnimal {
 	protected:

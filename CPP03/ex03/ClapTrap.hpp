@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:40:05 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 18:44:58 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:38:59 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define GREEN "\033[92m"
 # define CYAN "\033[96m"
 # define RED "\033[91m"
-# define NC "\033[1m"
+# define NC "\033[0m"
 
 class ClapTrap {
 	protected:

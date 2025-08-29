@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 22:12:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/28 22:12:24 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/29 12:38:59 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define WHITE "\033[97m"
 #define GREEN "\033[92m"
 #define CYAN "\033[96m"
-#define NC "\033[1m"
+#define NC "\033[0m"
 
 class Animal {
 	protected:
