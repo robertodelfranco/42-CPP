@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 18:09:24 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 15:59:30 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:48:39 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ int main() {
 	std::cout << std::endl;
 
 	ScavTrap s("Scav");
+	ClapTrap* ptr = new ScavTrap(s);
 
-	s.attack("Jane doe");
+	ptr->attack("Jane doe");
 	b.takeDamage(s.getAttackDamage());
 	s.takeDamage(30);
 	s.takeDamage(-1);
 	s.guardGate();
-	s.beRepaired(5);
+	ptr->beRepaired(5);
 	b.beRepaired(5);
 	s.takeDamage(180);
 	s.attack("John");
 
 	std::cout << std::endl;
+	delete ptr;
 }

@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 12:00:19 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 12:09:46 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 12:45:14 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public:
 		ScavTrap(const std::string name);
 		ScavTrap(const ScavTrap& other);
