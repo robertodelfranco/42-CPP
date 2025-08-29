@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:17:24 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 18:57:29 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 18:42:03 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ DiamondTrap::~DiamondTrap() {
 	std::cout << WHITE << "DiamondTrap destructor called" << NC << std::endl;
 }
 
-void	DiamondTrap::attack(const std::string target) {
+void	DiamondTrap::attack(const std::string& target) {
 	ScavTrap::attack(target);
 }
 

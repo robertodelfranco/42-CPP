@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:08:51 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/28 18:18:16 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/08/29 18:41:57 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		DiamondTrap& operator=(const DiamondTrap& other);
 		~DiamondTrap();
 
-		void	attack(const std::string target);
+		void	attack(const std::string& target);
 		void	whoAmI();
 };
 
