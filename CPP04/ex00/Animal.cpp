@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 22:27:01 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/28 22:27:01 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/29 16:25:39 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Animal::~Animal() {
 }
 
 void	Animal::makeSound() const {
-	std::cout << GREEN << "Animal make sound -> hihi!" << NC << std::endl;
+	std::cout << GREEN << "Animal make sound -> hi!" << NC << std::endl;
 }
 
 std::string	Animal::getType() const {
