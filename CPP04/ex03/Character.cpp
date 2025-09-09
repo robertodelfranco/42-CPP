@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 19:17:52 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/09 16:52:06 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 18:11:50 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	Character::equip(AMateria* m) {
 
 void	Character::unequip(int idx) {
 	if (idx < 0 || idx > 3) {
-		std::cout << "Index out of range" << std::endl;
+		std::cout << ORANGE << "Index out of range" << NC << std::endl;
 		return ;
 	}
 
@@ -117,6 +117,10 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
+	if (idx < 0 || idx > 3) {
+		std::cout << ORANGE << "Index out of range!" << NC << std::endl;
+		return ;
+	}
 	if (m_inventory[idx] == NULL) {
 		std::cout << ORANGE << "slot idx " << idx << " is empty!" << NC << std::endl;
 		return ;

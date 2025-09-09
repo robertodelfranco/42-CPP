@@ -2,7 +2,7 @@ NAME	=	interface
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp AMateria.cpp Cure.cpp Ice.cpp IMateriaSource.cpp MateriaSource.cpp ICharacter.cpp Character.cpp
+SRCS	=	main.cpp AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp
 
 CYAN	=	\033[1;96m
 GREEN	=	\033[1;92m
