@@ -6,13 +6,13 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 14:03:32 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/09 15:16:57 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 16:31:42 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() {
+Cure::Cure() : AMateria("cure") {
 	std::cout << GREEN << "Cure default constructor called!" << NC << std::endl;
 }
 
@@ -24,7 +24,7 @@ Cure::Cure(const Cure& other) {
 Cure&	Cure::operator=(const Cure& other) {
 	std::cout << GREEN << "Cure copy assignment constructor called!" << NC << std::endl;
 	if (this != &other) {
-		*this = other;
+		AMateria::operator=(other);
 	}
 	return (*this);
 }
@@ -34,7 +34,7 @@ Cure::~Cure() {
 }
 
 AMateria*	Cure::clone() const {
-	return new Cure();
+	return new Cure(*this);
 }
 
 void	Cure::use(ICharacter& target) {

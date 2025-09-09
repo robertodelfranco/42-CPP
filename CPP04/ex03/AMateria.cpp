@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 17:00:57 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/09 15:15:55 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:53:27 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ AMateria::AMateria(std::string const & type) : m_type(type) {
 	std::cout << MAGENTA << "AMateria type constructor called!" << NC << std::endl;
 }
 
-AMateria::AMateria(const AMateria& other) {
+AMateria::AMateria(const AMateria& other) : m_type(other.m_type) {
 	std::cout << MAGENTA << "AMateria copy constructor called" << NC << std::endl;
-	*this = other;
 }
 
 AMateria&	AMateria::operator=(const AMateria& other) {

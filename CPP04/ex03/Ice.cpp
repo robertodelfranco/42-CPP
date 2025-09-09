@@ -6,13 +6,13 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 14:15:27 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/09 15:17:10 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 16:18:23 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() {
+Ice::Ice() : AMateria("ice") {
 	std::cout << CYAN << "Ice default constructor called!" << NC << std::endl;
 }
 
@@ -24,7 +24,7 @@ Ice::Ice(const Ice& other) {
 Ice& Ice::operator=(const Ice& other) {
 	std::cout << CYAN << "Ice copy assignment constructor called!" << NC << std::endl;
 	if (this != &other) {
-		*this = other;
+		AMateria::operator=(other);
 	}
 	return (*this);
 }
@@ -34,8 +34,7 @@ Ice::~Ice() {
 }
 
 AMateria*	Ice::clone() const {
-	AMateria* other = new Ice();
-	return other;
+	return new Ice(*this);
 }
 
 void	Ice::use(ICharacter& target) {

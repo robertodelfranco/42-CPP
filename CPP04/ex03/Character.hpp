@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:42:46 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/05 19:19:32 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 16:33:25 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Character : public ICharacter {
 	private:
 		std::string	m_name;
 		AMateria*	m_inventory[4];
+		AMateria*	m_floorMaterial[100];
 
 	public:
 		Character(const std::string name);
