@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:44:57 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/08/29 18:33:29 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 18:00:57 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	Brain::setIdea(int i, std::string idea) {
 }
 
 std::string	Brain::getIdea(int i) {
-	if (ideas[i].empty()) {
+	if (i >= 0 && i < 100 && ideas[i].empty()) {
 		return "The index don't have any string on it!";
 	}
 	else if (i >= 0 && i < 100) {
