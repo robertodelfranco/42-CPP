@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 22:08:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/29 19:15:55 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 18:02:13 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int main() {
 	std::cout << b->getIdea(4) << std::endl;
 	std::cout << b->getIdea(5) << std::endl;
 	std::cout << b->getIdea(3) << std::endl;
+	std::cout << b->getIdea(101) << std::endl;
 
 	delete b;
 
