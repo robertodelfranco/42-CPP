@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:51:56 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/05 16:24:25 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:08:11 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class MateriaSource : public IMateriaSource {
 	private:

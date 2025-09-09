@@ -6,23 +6,27 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 17:00:57 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/05 18:58:12 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:15:55 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) {
-	std::cout << GREEN << "AMateria default constructor called!" << NC << std::endl;
+AMateria::AMateria() {
+	std::cout << MAGENTA << "AMateria default constructor called!" << NC << std::endl;
+}
+
+AMateria::AMateria(std::string const & type) : m_type(type) {
+	std::cout << MAGENTA << "AMateria type constructor called!" << NC << std::endl;
 }
 
 AMateria::AMateria(const AMateria& other) {
-	std::cout << GREEN << "AMateria copy constructor called" << NC << std::endl;
+	std::cout << MAGENTA << "AMateria copy constructor called" << NC << std::endl;
 	*this = other;
 }
 
 AMateria&	AMateria::operator=(const AMateria& other) {
-	std::cout << GREEN << "AMateria copy assignment constructor called!" << NC << std::endl;
+	std::cout << MAGENTA << "AMateria copy assignment constructor called!" << NC << std::endl;
 
 	if (this != &other) {
 		this->m_type = other.m_type;
@@ -31,7 +35,7 @@ AMateria&	AMateria::operator=(const AMateria& other) {
 }
 
 AMateria::~AMateria() {
-	std::cout << GREEN << "AMateria destructor called!" << NC << std::endl;
+	std::cout << MAGENTA << "AMateria destructor called!" << NC << std::endl;
 }
 
 void	AMateria::use(ICharacter& target) {

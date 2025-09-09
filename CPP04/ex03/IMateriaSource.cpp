@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 14:15:39 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/09 15:14:24 by rdel-fra         ###   ########.fr       */
+/*   Created: 2025/09/09 14:49:02 by rdel-fra          #+#    #+#             */
+/*   Updated: 2025/09/09 15:17:24 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#include "IMateriaSource.hpp"
 
-#include <iostream>
-#include "AMateria.hpp"
-
-class AMateria;
-
-class ICharacter {
-	public:
-		virtual			~ICharacter() {}
-		virtual			std::string const &	getName() const = 0;
-		virtual void	equip(AMateria* m) = 0;
-		virtual void	unequip(int idx) = 0;
-		virtual void	use(int idx, ICharacter& target) = 0;
-};
-
-#endif /* ICHARACTER_HPP */
+// IMateriaSource::~IMateriaSource() {
+// 	std::cout << WHITE << "IMateriaSource default constructor called!" << NC << std::endl;
+// }

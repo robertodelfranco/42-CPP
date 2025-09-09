@@ -1,4 +1,4 @@
-NAME	=	interfaca
+NAME	=	interface
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 

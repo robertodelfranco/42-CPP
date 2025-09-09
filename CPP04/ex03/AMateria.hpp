@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:06:07 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/05 17:16:06 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:19:43 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@
 # define RED "\033[91m"
 # define NC "\033[0m"
 
+class ICharacter;
+
 class AMateria {
 	protected:
-		std::string const m_type;
+		std::string m_type;
 
 	public:
+		AMateria();
 		AMateria(std::string const & type);
 		AMateria(const AMateria& other);
 		AMateria& operator=(const AMateria& other);
