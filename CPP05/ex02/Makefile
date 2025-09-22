@@ -2,7 +2,9 @@ NAME	=	bureaucrat
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp \
+			ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 
 CYAN	=	\033[1;96m
 GREEN	=	\033[1;92m

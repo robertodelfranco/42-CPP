@@ -1,17 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/22 13:50:14 by rdel-fra          #+#    #+#             */
+/*   Updated: 2025/09/22 14:13:24 by rdel-fra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <stdexcept>
-#include "Form.hpp"
-
-#define MAGENTA "\033[1;35m"
-#define YELLOW "\033[1;33m"
-#define GREEN "\033[1;32m"
-#define CYAN "\033[1;36m"
-#define BLUE "\033[1;34m"
-#define RED "\033[1;31m"
-#define NC "\033[0m"
+#include "AForm.hpp"
 
 class Form;
 
