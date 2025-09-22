@@ -41,6 +41,7 @@ clean:
 
 fclean:	clean
 	@rm -rf ${NAME}
+	@rm -rf ShrubberyTarget_shrubbery
 	@echo "${RED}All files cleaned!${NC}"
 
 re: fclean all

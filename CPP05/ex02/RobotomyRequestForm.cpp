@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 14:10:53 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/22 14:17:04 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:25:38 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 void	RobotomyRequestForm::executeAction() const {
-	std::cout << CYAN << "* Drilling noises *" << NC << std::endl;
+	std::cout << MAGENTA << "* Drilling noises *" << NC << std::endl;
 	if (rand() % 2) {
 		std::cout << MAGENTA << this->getName() << " has been robotomized successfully." << NC << std::endl;
 	}
 	else {
-		std::cout << RED << "The robotomy for " << this->getName() << " failed." << NC << std::endl;
+		std::cout << MAGENTA << "The robotomy for " << this->getName() << " failed." << NC << std::endl;
 	}
 }

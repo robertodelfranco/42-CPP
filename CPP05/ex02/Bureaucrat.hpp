@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:50:14 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/22 14:13:24 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:23:20 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdexcept>
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
