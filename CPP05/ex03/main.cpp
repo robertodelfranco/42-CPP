@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 14:21:00 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/23 11:08:29 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:30:26 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int main() {
     std::cout << "\n--- Signing Forms ---\n" << std::endl;
     john.signForm(robotomyForm);
     jane.signForm(robotomyForm);
-    jane.signForm(shrubberyForm);
     john.signForm(shrubberyForm);
-    jane.signForm(pardonForm);
+    jane.signForm(shrubberyForm);
     john.signForm(pardonForm);
+    jane.signForm(pardonForm);
 
     std::cout << "\n--- Executing Forms ---\n" << std::endl;
     john.executeForm(robotomyForm);

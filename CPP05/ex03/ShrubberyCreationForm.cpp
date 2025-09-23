@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 14:17:22 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/23 11:12:00 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:20:11 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void    ShrubberyCreationForm::executeAction() const {
                "  _ -  | |   -_\n"
                "      // \\\\\n";
     outfile.close();
-    std::cout << RED << "Shrubbery created successfully in " << this->getName() << "_shrubbery file." << NC << std::endl;
+    std::cout << GREEN << "Shrubbery created successfully." << NC << std::endl;
 }
