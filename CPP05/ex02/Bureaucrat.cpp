@@ -6,7 +6,7 @@
 /*   By: rdel-fra <rdel-fra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:50:18 by rdel-fra          #+#    #+#             */
-/*   Updated: 2025/09/22 13:54:00 by rdel-fra         ###   ########.fr       */
+/*   Updated: 2025/09/23 11:59:51 by rdel-fra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,14 @@ void	Bureaucrat::signForm(AForm& form) const {
 		std::cout << GREEN << this->name << " couldn't sign " << form.getName() << " because it is already signed." << NC << std::endl;
 		return ;
 	}
-	try {
-		form.beSigned(*this);
+	form.beSigned(*this);
+	if (form.getIsSigned())
 		std::cout << GREEN << this->name << " signed " << form.getName() << NC << std::endl;
-	} catch (std::exception& e) {
-		std::cout << GREEN << this->name << " couldn't sign " << form.getName() << " because " << e.what() << NC << std::endl;
-	}
 }
 
 void	Bureaucrat::executeForm(AForm const & form) const {
-	try {
-		form.execute(*this);
-		std::cout << GREEN << this->name << " executed " << form.getName() << NC << std::endl;
-	} catch (std::exception& e) {
-		std::cout << GREEN << this->name << " couldn't execute " << form.getName() << " because " << e.what() << NC << std::endl;
-	}
+	form.execute(*this);
+	std::cout << GREEN << this->name << " executed " << form.getName() << NC << std::endl;
 }
 
 const std::string& Bureaucrat::getName() const {
