@@ -1,10 +1,10 @@
-NAME	=	bureaucrat
+NAME	=	intern
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp \
 			ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp Intern.cpp
 
 CYAN	=	\033[1;96m
 GREEN	=	\033[1;92m
