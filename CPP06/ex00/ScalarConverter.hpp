@@ -11,13 +11,14 @@
 enum literalTypes { CHAR, INT, FLOAT, DOUBLE, NA, INF, NEG_INF, UNKNOW };
 
 class ScalarConverter {
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
-
-	static void convert(const std::string& literal);
+	
+	public:
+		static void convert(const std::string& literal);
 };
 
 #endif
