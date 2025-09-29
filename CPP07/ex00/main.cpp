@@ -1,46 +1,56 @@
 #include "whatever.hpp"
 
 int main( void ) {
+	std::cout << WHITE << "-------------------------" << RESET << std::endl;
+	std::cout << WHITE << "Testing with integers" << RESET << std::endl;
+	std::cout << std::endl;
+
 	int a = 2;
 	int b = 3;
 
-	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << CYAN << "a = " << a << ", b = " << b << RESET << std::endl;
 
 	::swap( a, b );
 
-	std::cout << "Swapped a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << CYAN << "Swapped a = " << a << ", b = " << b << RESET << std::endl;
+	std::cout << CYAN << "min( a, b ) = " << ::min( a, b ) << RESET << std::endl;
+	std::cout << CYAN << "max( a, b ) = " << ::max( a, b ) << RESET << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << WHITE << "-------------------------" << RESET << std::endl;
+	std::cout << WHITE << "Testing with strings" << RESET << std::endl;
 
 	std::cout << std::endl;
 
 	std::string c = "chaine1";
 	std::string d = "chaine2";
 
-	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << GREEN << "c = " << c << ", d = " << d << RESET << std::endl;
 
 	::swap(c, d);
 
-	std::cout << "Swapped c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	std::cout << GREEN << "Swapped c = " << c << ", d = " << d << RESET << std::endl;
+	std::cout << GREEN << "min( c, d ) = " << ::min( c, d ) << RESET << std::endl;
+	std::cout << GREEN << "max( c, d ) = " << ::max( c, d ) << RESET << std::endl;
 
 	std::cout << std::endl;
-	std::cout << "-----------------------------------" << std::endl;
 
-	std::cout << "Testing with float values" << std::endl;
+	std::cout << WHITE << "-------------------------" << RESET << std::endl;
+	std::cout << WHITE << "Testing with float values" << RESET << std::endl;
+
 	std::cout << std::endl;
 
 	float e = 99.5f;
 	float f = 21.5f;
 
-	std::cout << "e = " << e << ", f = " << f << std::endl;
+	std::cout << YELLOW << "e = " << e << ", f = " << f << RESET << std::endl;
 
 	::swap(e, f);
 
-	std::cout << "Swapped e = " << e << ", f = " << f << std::endl;
-	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
-	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
+	std::cout << YELLOW << "Swapped e = " << e << ", f = " << f << RESET << std::endl;
+	std::cout << YELLOW << "min( e, f ) = " << ::min( e, f ) << RESET << std::endl;
+	std::cout << YELLOW << "max( e, f ) = " << ::max( e, f ) << RESET << std::endl;
 
 	return 0;
 }
