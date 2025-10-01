@@ -13,6 +13,7 @@ int main( void ) {
 	::swap( a, b );
 
 	std::cout << CYAN << "Swapped a = " << a << ", b = " << b << RESET << std::endl;
+	// std::cout << CYAN << ::min(9, 8) << RESET << std::endl; error de compilação por referência não-const
 	std::cout << CYAN << "min( a, b ) = " << ::min( a, b ) << RESET << std::endl;
 	std::cout << CYAN << "max( a, b ) = " << ::max( a, b ) << RESET << std::endl;
 
