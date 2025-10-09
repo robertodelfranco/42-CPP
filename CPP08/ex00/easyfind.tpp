@@ -2,17 +2,12 @@
 
 template <typename T>
 
-void	easyfind(T* container, int nb) {
-	if (container == NULL) {
-		std::cout << RED << "Null Pointer!" << RESET << std::endl;
-		return ;
-	}
+typename T::iterator	easyfind(T& container, int nb) {
+	typename T::iterator it = std::find(container.begin(), container.end(), nb);
 
-	for (int i = 0; i < container.size(); i++) {
-		if (container[i] == nb) {
-			std::cout << GREEN << "Number " << nb << " was found in the " << i << " position of the container." << RESET << std::endl;
-			return ;
-		}
-	}
-	throw std::("Nb was not found!");
+	if (it == container.end())
+		throw std::runtime_error("\033[1;31mNumber was not found in the container!\033[0m");
+
+	std::cout << GREEN << "Found: " << *it << RESET << std::endl;
+	return it;
 }
