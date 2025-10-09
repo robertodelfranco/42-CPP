@@ -1,8 +1,8 @@
-NAME	=	easyfind
+NAME	=	span
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp 
+SRCS	=	main.cpp Span.cpp
 
 YELLOW	=	\033[1;93m
 GREEN	=	\033[1;92m
