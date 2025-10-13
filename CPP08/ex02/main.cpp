@@ -6,7 +6,7 @@ int main() {
 	
 	MutantStack<int> mstack;
 	std::cout << std::endl;
-
+	
 	mstack.push(5);
 	mstack.push(17);
 
@@ -30,11 +30,24 @@ int main() {
 	++it;
 	--it;
 	while (it != ite) {
-		std::cout << YELLOW << *it << RESET << std::endl;
+		std::cout << GREEN << *it << RESET << std::endl;
 		++it;
 	}
 
+	
+	std::cout << std::endl;
+	std::cout << WHITEBOLD << "----- MutantStack copy const -----" << RESET << std::endl;
+	std::cout << std::endl;
+
+	const MutantStack<int> const_mstack(mstack);
+	std::cout << std::endl;
+	
+	for (MutantStack<int>::const_iterator cit = const_mstack.begin(); cit != const_mstack.end(); ++cit) {
+		std::cout << CYAN << *cit << RESET << std::endl;
+	}
+
 	std::stack<int> s(mstack);
+	// s.begin(); // This line cause a compilation error if uncommented
 
 	std::cout << std::endl;
 	std::cout << WHITEBOLD << "----- Container List -----" << RESET << std::endl;

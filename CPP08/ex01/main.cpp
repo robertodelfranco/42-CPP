@@ -61,5 +61,19 @@ int main() {
 		std::cerr << WHITEBOLD << "Exception: " << e.what() << RESET << std::endl;
 	}
 
+	Span range(100000);
+	std::vector<int> largeVec;
+
+	for (int i = 0; i < 100000; ++i) {
+		largeVec.push_back(i * 3);
+	}
+	
+	range.addNumberRange(largeVec.begin(), largeVec.end());
+
+	// Test shortest and longest span
+	std::cout << "Shortest Span in largeVec: " << range.shortestSpan() << std::endl;
+	std::cout << "Longest Span in largeVec: " << range.longestSpan() << std::endl;
+	std::cout << std::endl;
+
 	return 0;
 }
