@@ -1,8 +1,8 @@
-NAME	=	btc
+NAME	=	RPN
 CC		=	c++
 FLAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp BitcoinExchange.cpp
+SRCS	=	main.cpp RPN.cpp
 
 MAGENTA	=	\033[1;95m
 YELLOW	=	\033[1;93m
