@@ -31,9 +31,20 @@ void	PmergeMe::init(int ac, char **av) {
 			std::cout << " ";
 	}
 	std::cout << std::endl;
-
+	
 	sortVector();
 	sortDeque();
+	
+	std::cout << "After:  ";
+	for (size_t i = 0; i < _vec.size(); ++i) {
+		std::cout << _vec[i];
+		if (i < _vec.size() - 1)
+			std::cout << " ";
+	}
+	std::cout << std::endl;
+
+	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << std::fixed << std::setprecision(3) << _timeVecUs << " us" << std::endl;
+	std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << _timeDeqUs << " us" << std::endl;
 }
 
 void	PmergeMe::parseInput(int ac, char **av) {
@@ -64,37 +75,26 @@ void	PmergeMe::parseInput(int ac, char **av) {
 }
 
 void	PmergeMe::sortDeque() {
-	struct timeval start, end;
+	std::clock_t 	start, end;
 
-	gettimeofday(&start, NULL);
+	start = std::clock();
 
 	merge_insert_sort(_deq);
 
-	gettimeofday(&end, NULL);
-	_timeDeqUs = (long long)(end.tv_sec - start.tv_sec) * 1000000LL + (long long)(end.tv_usec - start.tv_usec);
+	end = std::clock();
 
-	std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque : " << _timeDeqUs << " us" << std::endl;
+	_timeDeqUs = (double)(end - start) * 1000000.0 / (double)CLOCKS_PER_SEC;
 }
 
 void	PmergeMe::sortVector() {
-	struct timeval start, end;
+	std::clock_t	start, end;
 
-	gettimeofday(&start, NULL);
+	start = std::clock();
 
 	merge_insert_sort(_vec);
 
-	gettimeofday(&end, NULL);
-	_timeVecUs = (long long)(end.tv_sec - start.tv_sec) * 1000000LL + (long long)(end.tv_usec - start.tv_usec);
-
-	std::cout << "After:  ";
-	for (size_t i = 0; i < _vec.size(); ++i) {
-		std::cout << _vec[i];
-		if (i < _vec.size() - 1)
-			std::cout << " ";
-	}
-	std::cout << std::endl;
-
-	std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector : " << _timeVecUs << " us" << std::endl;
+	end = std::clock();
+	_timeVecUs = (double)(end - start) * 1000000.0 / (double)CLOCKS_PER_SEC;
 }
 
 std::deque<int>	PmergeMe::getDeque() const {

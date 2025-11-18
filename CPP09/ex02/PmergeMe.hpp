@@ -3,12 +3,15 @@
 
 #include <iostream>
 #include <cstring>
+#include <string>
 #include <stdexcept>
 #include <cstdlib>
 #include <limits>
 #include <vector>
 #include <deque>
-#include <sys/time.h>
+#include <sstream>
+#include <ctime>
+#include <iomanip>
 
 #define RED "\033[1;91m"
 #define RESET "\033[0m"
@@ -17,8 +20,8 @@ class PmergeMe {
 	private:
 		std::vector<int>	_vec;
 		std::deque<int>		_deq;
-		long long			_timeVecUs;
-		long long			_timeDeqUs;
+		double				_timeVecUs;
+		double				_timeDeqUs;
 
 	public:
 		PmergeMe();
@@ -39,55 +42,70 @@ class PmergeMe {
 
 		static void compute_jacobsthal_sequence(std::vector<size_t> &out, size_t limit) {
 			out.clear();
+			out.reserve(32);
 			out.push_back(0);
 			if (limit == 0) return;
 			out.push_back(1);
+
+			// Gera enquanto o último termo for < limit (queremos pelo menos um J >= limit
+			// para cobrir todo o intervalo [0, limit) nos blocos)
 			while (out.back() < limit) {
 				size_t s = out.size();
-				unsigned long long next = (unsigned long long)out[s - 1] + 2ull * (unsigned long long)out[s - 2];
+				unsigned long long a = static_cast<unsigned long long>(out[s - 1]);
+				unsigned long long b = static_cast<unsigned long long>(out[s - 2]);
+				unsigned long long next = a + 2ull * b;
+
+				// detecção simples de overflow / não crescimento
+				if (next <= a) break;
+
 				out.push_back(static_cast<size_t>(next));
-				if (out.size() > 100) break;
+
+				// guarda contra loops absurdos (cap alto, raro de atingir)
+				if (out.size() > 64) break;
 			}
 		}
 
+		// Gera ordem de índices para inserir S.size() elementos usando blocos Jacobsthal.
+		// Dentro de cada bloco (J[k-1], J[k]] inserimos do maior para o menor.
 		static void generate_jacob_indices(std::vector<size_t> &order, size_t s_size) {
 			order.clear();
-
 			if (s_size == 0) return;
+			order.reserve(s_size);
 
 			std::vector<size_t> J;
 			compute_jacobsthal_sequence(J, s_size);
 
 			std::vector<char> used(s_size, 0);
-			size_t k = 1;
-			size_t start;
-			size_t end_j;
-			while (true) {
-				if (k - 1 < J.size())
-					start = J[k - 1];
-				else
-					start = J.back();
-				if (k < J.size())
-					end_j = J[k];
-				else
-					end_j = J.back();
 
-				if (start >= s_size) break;
+			// Processa blocos (J[k-1], J[k]] para k = 1..J.size()-1
+			for (size_t k = 1; k < J.size() && order.size() < s_size; ++k) {
+				size_t start = J[k - 1];
+				size_t end = J[k];
 
-				size_t end = (end_j == 0) ? start : std::min(end_j, s_size);
+				if (start >= s_size) continue;
 
-				for (size_t i = start; i < end; ++i) {
+				// real_end é exclusivo; se end > s_size, use s_size
+				size_t real_end = (end > s_size ? s_size : end);
+
+				// percorre de real_end-1 até start (inclusive), inserindo do maior para o menor
+				for (size_t i = real_end; i-- > start; ) {
 					if (!used[i]) {
 						order.push_back(i);
 						used[i] = 1;
+						if (order.size() >= s_size) break;
 					}
 				}
-				if (order.size() >= s_size) break;
-				if (k > J.size() + 10) break;
-				++k;
 			}
-			for (size_t i = 0; i < s_size; ++i) {
-				if (!used[i]) order.push_back(i);
+
+			// Se faltarem índices (caso J não tenha coberto tudo), adiciona os restantes (decrescente)
+			if (order.size() < s_size) {
+				for (size_t i = s_size; i-- > 0; ) {
+					if (!used[i]) {
+						order.push_back(i);
+						used[i] = 1;
+						if (order.size() >= s_size) break;
+					}
+				}
 			}
 		}
 		
